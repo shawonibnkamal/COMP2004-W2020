@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 .DS_Store
 .sconsign.dblite
 .vscode
 .clang-format
 
+=======
+>>>>>>> 32d22cacfab93716c226b4bfd830918072f6cb01
 # Prerequisites
 *.d
 
@@ -54,4 +57,8 @@
 modules.order
 Module.symvers
 Mkfile.old
+<<<<<<< HEAD
 dkms.conf
+=======
+dkms.conf
+>>>>>>> 32d22cacfab93716c226b4bfd830918072f6cb01
