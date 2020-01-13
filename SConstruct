@@ -8,6 +8,6 @@ env['CCFLAGS'] = '-Wall -Wextra'
 # env.Program('structure/datatypes.c')
 # env.Program('structure/flowcontrol.c')
 # env.Program('structure/passbyvalue.c')
-env.Program('pointerarrays.c')
-env.Program('letters.c')
+# env.Program('pointerarrays.c')
+# env.Program('letters.c')
 env.Program('structlist.c')
