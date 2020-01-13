@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /* Modified example from K&R */
 
@@ -19,7 +20,7 @@ struct pointlist makepoint(int x, int y) {
   struct pointlist temp;
   temp.x = x;
   temp.y = y;
-  temp.nextpoint = 0;  // Same as NULL
+  temp.nextpoint = NULL;  // Same as 0
   return temp;
 }  // no semi-colon
 
@@ -58,11 +59,12 @@ int main() {
   }
 
   // What if the length is unknown?
-  /*
   {
     // Add an extra element
     struct pointlist mypoint3;
-    mypoint3 = makepoint(rand()%30, rand()%30); //)*#$*&^%)!@#
+    srand(time(0));  // Seeds the random number generator with the current time
+    mypoint3 = makepoint(
+        rand() % 30, rand() % 30);  //)*#$*&^%)!@# why are the number the same?
     mypoint2.nextpoint = &mypoint3;
 
     i = &mypoint1;
@@ -74,10 +76,8 @@ int main() {
     }
     printf("-----------\n");
   }
-  */
 
   // dynamically allocate the list
-  /*
   {
     struct pointlist *makepointnode(int x, int y);  // What is this?
     struct pointlist *head, *temp, *tail;
@@ -104,14 +104,13 @@ int main() {
       printf("-----------\n");
     }
   }
-  */
 
   // One last struct ...
-  /*
   {
-    typedef struct pointlist pt_t;
-    pt_t *makepointnode(int x, int y);  // What is this?
-    pt_t *head, *temp, *tail;
+    typedef struct pointlist pointlist_t;
+    pointlist_t *makepointnode(int x,
+                               int y);  // What is this? A function prototype
+    pointlist_t *head, *temp, *tail;
 
     head = makepointnode(3, 4);
     tail = head;
@@ -131,7 +130,6 @@ int main() {
       printf("-----------\n");
     }
   }
-  */
 }
 
 struct pointlist *makepointnode(int x, int y) {
